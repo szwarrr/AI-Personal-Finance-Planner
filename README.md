@@ -47,15 +47,15 @@ pip install -r requirements.txt
 **requirements.txt:**
 ```txt
 streamlit>=1.28.0
-openai>=1.0.0
 agno>=0.1.0
-serpapi>=2.4.0
+anthropic>=0.18.0
+google-search-results>=2.4.2
 ```
 
 ### 3. Get Your API Keys
 
-#### **OpenAI API Key:**
-1. Visit [https://platform.openai.com](https://platform.openai.com)
+#### **Claude API Key:**
+1. Visit  [https://console.anthropic.com]
 2. Sign up or log in to your account
 3. Navigate to **API Keys** section
 4. Click **"Create new secret key"**
@@ -86,7 +86,7 @@ The app will automatically open in your default browser at `http://localhost:850
 ### Step 1: Enter API Keys
 1. Open the application in your browser
 2. In the **sidebar**, locate the "🔑 API Keys" section
-3. Enter your **OpenAI API Key**
+3. Enter your **Claude API Key**
 4. Enter your **SerpAPI Key**
 
 ### Step 2: Configure Settings (Optional)
@@ -161,10 +161,9 @@ The application uses two AI agents working together:
 ```
 ai-finance-planner/
 │
-├── finance_agent.py          # Main application file
+├── main.py          # Main application file
 ├── requirements.txt           # Python dependencies
 ├── README.md                  # This file
-└── .gitignore                # Git ignore rules
 ```
 
 ---
@@ -173,21 +172,6 @@ ai-finance-planner/
 
 ### Key Components
 
-**Agent Configuration:**
-```python
-researcher = Agent(
-    name="Researcher",
-    role="Searches for financial advice and investment opportunities",
-    model=OpenAIChat(id="gpt-4o", api_key=openai_api_key),
-    tools=[SerpApiTools(api_key=serp_api_key)]
-)
-
-planner = Agent(
-    name="Planner",
-    role="Generates personalized financial plans",
-    model=OpenAIChat(id="gpt-4o", api_key=openai_api_key)
-)
-```
 
 **User Input Collection:**
 ```python
@@ -236,7 +220,7 @@ Save strategically for homes, cars, or education
 
 Create a `.env` file:
 ```env
-OPENAI_API_KEY=sk-your-key-here
+CLAUDE-API-KEY=sk-your-key-here
 SERPAPI_KEY=your-serpapi-key-here
 ```
 
@@ -246,7 +230,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-openai_api_key = os.getenv("OPENAI_API_KEY")
+cloude-api-key = os.getenv("CLAUDE-API-KEY")
 serp_api_key = os.getenv("SERPAPI_KEY")
 ```
 
@@ -254,13 +238,13 @@ serp_api_key = os.getenv("SERPAPI_KEY")
 
 Create `.streamlit/secrets.toml`:
 ```toml
-OPENAI_API_KEY = "sk-your-key-here"
+CLAUDE-API-KEY = "sk-your-key-here"
 SERPAPI_KEY = "your-serpapi-key-here"
 ```
 
 Access in code:
 ```python
-openai_api_key = st.secrets["OPENAI_API_KEY"]
+claude_api_key = st.secrets["CLAUDE-API-KEY"]
 serp_api_key = st.secrets["SERPAPI_KEY"]
 ```
 
@@ -341,7 +325,7 @@ This project is licensed under the **MIT License** - see the LICENSE file for de
 
 ## 🙏 Acknowledgments
 
-- **OpenAI** - For GPT-4o API
+- **Claude Sonnet 4** - for Analyzes your financial goals and situation
 - **SerpAPI** - For web search capabilities
 - **Streamlit** - For the amazing framework
 - **Agno** - For agent orchestration
