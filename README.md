@@ -1,6 +1,6 @@
 # 💰 AI Personal Finance Planner
 
-A powerful Streamlit application that leverages **OpenAI GPT-4o** and **SerpAPI** to create personalized financial plans. Get AI-powered budgets, investment strategies, and savings recommendations tailored to your unique financial situation.
+A powerful Streamlit application that leverages **Claude Sonnet 4** and **SerpAPI** to create personalized financial plans. Get AI-powered budgets, investment strategies, and savings recommendations tailored to your unique financial situation.
 
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![Streamlit](https://img.shields.io/badge/streamlit-1.28+-red.svg)
@@ -24,7 +24,7 @@ A powerful Streamlit application that leverages **OpenAI GPT-4o** and **SerpAPI*
 Before you begin, ensure you have:
 
 - **Python 3.8+** installed on your system
-- An **OpenAI API key** (for GPT-4o access)
+- An **claude** (for Claude Sonnet 4 access)
 - A **SerpAPI key** (for web search functionality)
 
 ---
