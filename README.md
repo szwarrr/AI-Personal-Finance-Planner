@@ -34,7 +34,7 @@ Before you begin, ensure you have:
 ### 1. Clone or Download the Project
 
 ```bash
-git clone https://github.com/yourusername/ai-finance-planner.git
+git clone https://github.com/szwar/ai-finance-planner.git
 cd ai-finance-planner
 ```
 
